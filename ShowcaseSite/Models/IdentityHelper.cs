@@ -3,14 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ShowcaseSite.Models;
 
 namespace ShowcaseSite.Models
 {
-    public static class IdentityHelper
+    public class IdentityHelper
     {
+        /* public void GetBio()
+        {
+            string Bio = U
+        }*/ 
         public static void SetIdentityOptions(IdentityOptions options)
         {
-            // Setting sign in options
+            // Setting sign in options                                                 
             options.SignIn.RequireConfirmedEmail = false;
             options.SignIn.RequireConfirmedPhoneNumber = false;
 
@@ -23,5 +28,6 @@ namespace ShowcaseSite.Models
 
 
         }
+
     }
 }

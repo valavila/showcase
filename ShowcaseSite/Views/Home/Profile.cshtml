@@ -1,4 +1,50 @@
 ﻿@{
     ViewData["Title"] = "User Profile";
+    
 }
+@using ShowcaseSite.Controllers
 <h1 class="display-4">User Profile</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <center>
+                                <h4>@User.Identity.Name</h4>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <center>
+                                <img width="100" src="~/GeneralUser.jpg" />
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                                <label>       About Me</label>
+                            </center>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <p>@ViewBag.Message</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
