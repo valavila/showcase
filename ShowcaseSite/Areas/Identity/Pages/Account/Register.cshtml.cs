@@ -87,7 +87,7 @@ namespace ShowcaseSite.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = Input.Username, Email = Input.Email, FirstName = Input.FirstName, LastName = Input.LastName,
-                                                DOB = Input.DOB};
+                                                DOB = Input.DOB, Bio = Input.Bio};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
