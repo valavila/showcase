@@ -2,8 +2,7 @@
     ViewData["Title"] = "User Profile";
     
 }
-@using ShowcaseSite.Controllers
-<h1 class="display-4">User Profile</h1>
+
 <div class="container">
     <div class="row">
         <div class="col-md-5">
@@ -12,7 +11,7 @@
                     <div class="row">
                         <div class="col">
                             <center>
-                                <h4>@User.Identity.Name</h4>
+                                <h4>@ViewBag.Name</h4>
                             </center>
                         </div>
                     </div>
@@ -34,7 +33,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <center>
-                                <label>       About Me</label>
+                                <h5>       About Me</h5>
                             </center>
                             <div class="form-group">
                                 <div class="input-group">

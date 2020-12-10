@@ -37,7 +37,8 @@ namespace ShowcaseSite.Controllers
         {
             ApplicationUser currentUser = await _userManager.GetUserAsync(User);
          
-                ViewBag.Message = currentUser.Bio;
+            ViewBag.Message = currentUser.Bio;
+            ViewBag.Name = currentUser.FirstName + " " + currentUser.LastName;
             
             return View();
         }
