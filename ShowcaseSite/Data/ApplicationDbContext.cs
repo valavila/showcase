@@ -13,5 +13,7 @@ namespace ShowcaseSite.Data
             : base(options)
         {
         }
+
+        public DbSet<UserPost> UserPosts { get; set; }
     }
 }
