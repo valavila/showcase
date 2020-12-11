@@ -1,8 +1,44 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model IEnumerable<ShowcaseSite.Models.Product>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h4 class="text-center text-uppercase">List of employee</h4>
+
+    <p>
+        <a asp-action="Profile" class="btn btn-sm btn-primary rounded-0 text-uppercase"><i class="fas fa-plus-circle"></i> Add New</a>
+    </p>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.UserName)</th>
+                <th>@Html.DisplayNameFor(model => model.Title)</th>
+                <th>@Html.DisplayNameFor(model => model.Description)</th>
+                <th>@Html.DisplayNameFor(model => model.Price)</th>
+                <th>@Html.DisplayNameFor(model => model.PicUrl)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>
+                        <img src="~/images/@product.PicUrl"
+                             class="rounded-circle"
+                             height="40" width="40"
+                             asp-append-version="true" />
+                        @product.Title
+                    </td>
+                    <td>@product.UserName</td>
+                    <td>@product.Title</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                    <td>@product.PicUrl</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
 </div>

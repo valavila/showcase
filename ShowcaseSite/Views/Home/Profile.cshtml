@@ -1,10 +1,12 @@
-﻿@{
+﻿@model ShowcaseSite.ViewModels.ProductViewModel;
+@{
     ViewData["Title"] = "User Profile";
-    
+
 }
 
 <div class="container">
     <div class="row">
+
         <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
@@ -19,7 +21,7 @@
                     <div class="row">
                         <div class="col">
                             <center>
-                                <img width="100" src="~/GeneralUser.jpg" />
+                                <img width="100" src="~/images/GeneralUser.jpg" />
                             </center>
                         </div>
                     </div>
@@ -46,8 +48,14 @@
                 </div>
             </div>
 
-            
+            <div class="row">
+                <div class="col">
+                    <br />
+                </div>
             </div>
+
+        </div>
+
 
         <div class="col-7">
             <div class="card">
@@ -63,7 +71,7 @@
                     <div class="row">
                         <div class="col">
                             <center>
-                                
+
                             </center>
                         </div>
                     </div>
@@ -77,6 +85,78 @@
                 </div>
             </div>
         </div>
-    
+
+        <div class="row">
+            <div class="col">
+                <br />
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <center>
+                                <h4>Add Product</h4>
+                            </center>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Title" class="control-label"></label>
+                                    <input asp-for="Title" class="form-control" />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-label"></label>
+                                    <input asp-for="Description" class="form-control" />
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Price" class="control-label"></label>
+                                    <input asp-for="Price" class="form-control" />
+                                    <span asp-validation-for="Price" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PicUrl" class="control-label"></label>
+                                    <div class="custom-file">
+                                        <input asp-for="PicUrl" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Choose file</label>
+                                    </div>
+                                    <span asp-validation-for="PicUrl" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Create" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+@section scripts{
+    <script type="text/javascript">
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+}
+
