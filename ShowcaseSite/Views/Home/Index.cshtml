@@ -4,7 +4,7 @@
 @model IEnumerable<ShowcaseSite.Models.Product>
 
 <div class="text-center">
-    <h4 class="text-center text-uppercase">List of employee</h4>
+    <h4 class="text-center text-uppercase">List of Product</h4>
 
     <p>
         <a asp-action="Profile" class="btn btn-sm btn-primary rounded-0 text-uppercase"><i class="fas fa-plus-circle"></i> Add New</a>
@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var product in Model)
+            @*@foreach (var product in Model)
             {
                 <tr>
                     <td>
@@ -38,7 +38,7 @@
                     <td>@product.PicUrl</td>
                 </tr>
 
-            }
+            }*@
         </tbody>
     </table>
 </div>
