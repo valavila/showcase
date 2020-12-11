@@ -14,6 +14,6 @@ namespace ShowcaseSite.Data
         {
         }
 
-        public DbSet<UserPost> UserPosts { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

@@ -18,8 +18,6 @@ namespace ShowcaseSite.Models
 
         public string Bio { get; set; }
 
-        public virtual UserPost UserPost { get; set; }
-
 
     }
 }
