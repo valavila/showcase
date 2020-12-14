@@ -1,8 +1,42 @@
-﻿@{
+﻿@model IEnumerable<Product>
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h4 class="text-center text-uppercase">List of Products</h4>
+
+<p>
+    <center>
+        <a asp-action="Profile" class="btn btn-sm btn-primary rounded-0 text-uppercase"><i class="fas fa-plus-circle"></i> Add New</a>
+    </center>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.UserName)</th>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>Image</th>
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.Price)</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach(Product product in Model)
+            {
+                <tr>
+                    <td>@product.UserName</td>
+                    <td>@product.Title</td>
+                    <td>
+                        <img src="~/images/@product.PicUrl"
+                             height="200" width="200"
+                             asp-append-version="true" />
+                    </td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                </tr>
+                }
+    </tbody>
+</table>  
+

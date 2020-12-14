@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.Extensions.Logging;
 using ShowcaseSite.Data;
@@ -30,10 +31,10 @@ namespace ShowcaseSite.Controllers
             webHostEnvironment = hostEnvironment;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            //var product = await dbContext.Products.ToListAsync();
-            return View();
+            var product = await DBcontext.Products.ToListAsync();
+            return View(product);
         }
 
         public IActionResult Privacy()
